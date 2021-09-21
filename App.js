@@ -1,16 +1,42 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet } from "react-native";
 
-const App = () => {
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack"
+
+import HomeScreen from './src/screens/HomeScreen';
+import DetailsScreen from './src/screens/DetailsScreen';
+import ImageScreen from './src/screens/ImageScreen';
+
+const Stack = createStackNavigator();
+
+export default function App() {
   return (
-    <View style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-      <Text>Hello, world!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+      initialRouteName="Home">
+        <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        />
+        <Stack.Screen
+        name="Details"
+        component={DetailsScreen}
+        />
+        <Stack.Screen
+        name="BigImageView"
+        component={ImageScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-export default App;
+const styles = StyleSheet.create({
+  mainView: {
+      flex: 1,
+      backgroundColor: "#fff",
+      alignItems: "center",
+      justifyContent: "center",
+  },
+});
