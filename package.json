@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "run-android",
+    "android": "react-native run-android",
     "ios": "run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "webpack --config webpack.dev.js"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.2",

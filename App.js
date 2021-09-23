@@ -14,18 +14,26 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      initialRouteName="Home">
+      initialRouteName="AppToHome">
         <Stack.Screen
-        name="Home"
+        name="AppToHome"
         component={HomeScreen}
         />
         <Stack.Screen
-        name="Details"
+        name="HomeToDetails"
         component={DetailsScreen}
         />
         <Stack.Screen
-        name="BigImageView"
+        name="DetailsToDetails"
+        component={DetailsScreen}
+        />
+        <Stack.Screen
+        name="DetailsToBigImageView"
         component={ImageScreen}
+        />
+        <Stack.Screen
+        name="BigImageViewToHome"
+        component={HomeScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

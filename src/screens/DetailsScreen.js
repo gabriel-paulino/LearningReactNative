@@ -2,14 +2,20 @@ import React from "react";
 import { Button, View, Text, StyleSheet } from "react-native";
 
 
-const DetailsScreen = () => {
+const DetailsScreen = ( {navigation, route} ) => {
+    console.log(route);
     return(
-
         <View style={styles.mainView}>
             <Text>Details Screen</Text>
             <Button
             title="Go to Image"
-            onPress={ () => {console.log("Go to BigImageView")}}/>
+            onPress={ () => {navigation.navigate("DetailsToBigImageView")}}/>
+            <Button
+            title="More Details"
+            onPress={ () => {navigation.push("DetailsToDetails")}}/>
+            <Button
+            title="Go Back Home"
+            onPress={ () => {navigation.popToTop()}}/>
         </View>
     );
 };
