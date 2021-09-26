@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "build": "webpack --config webpack.dev.js"
+    "build": "webpack --config webpack.dev.js",
+    "clean": "cd android && ./gradlew clean && cd .."
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.2",
