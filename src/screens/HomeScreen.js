@@ -8,10 +8,29 @@ const HomeScreen = ( {navigation, route} ) => {
         <View style={styles.mainView}>
             <Text>Home Screen</Text>
             <Button
-            title="Go to Detais"
+            title="Star Wars"
             onPress={ () => {
-                navigation.navigate("HomeToDetails", {screenNumber: 1})
-                }}/>
+                navigation.navigate("HomeToDetails", {movie: {
+                    title: "Star Wars",
+                    release: 1997,
+                    screenNumber: 1
+                }} )}}/>
+            <Button
+            title="Black Phanter"
+            onPress={ () => {
+                navigation.navigate("HomeToDetails", {movie: {
+                    title: "Black Phanter",
+                    release: 2018,
+                    screenNumber: 1
+                }} )}}/>
+            <Button
+            title="The Matrix"
+            onPress={ () => {
+                navigation.navigate("HomeToDetails", {movie: {
+                    title: "The Matrix",
+                    release: 1999,
+                    screenNumber: 1
+                }} )}}/>
         </View>
     );
 };
