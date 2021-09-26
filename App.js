@@ -14,18 +14,33 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      initialRouteName="AppToHome">
+      initialRouteName="AppToHome"
+      screenOptions={
+        {
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }
+      }>
         <Stack.Screen
         name="AppToHome"
         component={HomeScreen}
+        options={{
+          title: 'Movie Time',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 30
+          }          
+        }}
         />
         <Stack.Screen
         name="HomeToDetails"
         component={DetailsScreen}
+        options={ ({route}) => ({title: route.params.movie.title})}
         />
         <Stack.Screen
         name="DetailsToDetails"
         component={DetailsScreen}
+        options={ ({route}) => ({title: route.params.movie.title})}
         />
         <Stack.Screen
         name="DetailsToBigImageView"
