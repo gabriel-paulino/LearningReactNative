@@ -51,6 +51,14 @@ const HomeScreen = ( {navigation, route} ) => {
                         <Text style={styles.touchableText}>Gesture Responder</Text>
                     </View>
             </TouchableOpacity>
+            <TouchableOpacity
+            style={styles.touchableView}
+            onPress={ () => {
+                navigation.navigate("HomeToGestureHandler")}}>
+                    <View>
+                        <Text style={styles.touchableText}>Gesture Handler</Text>
+                    </View>
+            </TouchableOpacity>
         </View>
     );
 };
