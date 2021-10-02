@@ -7,6 +7,8 @@ import { createStackNavigator } from "@react-navigation/stack"
 import HomeScreen from './src/screens/HomeScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
 import ImageScreen from './src/screens/ImageScreen';
+import GestureResponderScreen from './src/screens/GestureResponderScreen';
+
 
 const Stack = createStackNavigator();
 
@@ -49,6 +51,10 @@ export default function App() {
         <Stack.Screen
         name="BigImageViewToHome"
         component={HomeScreen}
+        />
+        <Stack.Screen
+        name="HomeToGestureResponder"
+        component={GestureResponderScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

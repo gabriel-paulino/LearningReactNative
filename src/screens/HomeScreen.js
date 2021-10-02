@@ -43,6 +43,14 @@ const HomeScreen = ( {navigation, route} ) => {
                         <Text style={styles.touchableText}>The Matrix</Text>
                     </View>
             </TouchableOpacity>
+            <TouchableOpacity
+            style={styles.touchableView}
+            onPress={ () => {
+                navigation.navigate("HomeToGestureResponder")}}>
+                    <View>
+                        <Text style={styles.touchableText}>Gesture Responder</Text>
+                    </View>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -55,8 +63,8 @@ const styles = StyleSheet.create({
     },
     touchableView: {
         marginBottom: 30,
-        width: 150,
-        height: 50,
+        width: 180,
+        height: 60,
         alignItems: 'center',
         backgroundColor: 'orange',
         borderWidth: 5,
