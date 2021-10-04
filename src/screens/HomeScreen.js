@@ -1,8 +1,11 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 
 
 const HomeScreen = ( {navigation, route} ) => {
+
+    const [cep, setCep] = useState('');
+
     console.log(route);
     return(
         <View style={styles.mainView}>
@@ -57,6 +60,21 @@ const HomeScreen = ( {navigation, route} ) => {
                 navigation.navigate("HomeToGestureHandler")}}>
                     <View>
                         <Text style={styles.touchableText}>Gesture Handler</Text>
+                    </View>
+            </TouchableOpacity>
+            <TextInput 
+                value={cep}
+                style={{borderColor: 'black', borderWidth: 1, width: 110}}
+                placeholder= {"Digite seu CEP"}
+                onChangeText={text => setCep(text)}
+            />  
+            <TouchableOpacity
+            style={styles.touchableView}
+            onPress={ () => {
+                if(cep != '')
+                    navigation.navigate("HomeToAddress", {zipCode: cep})}}>
+                    <View>                       
+                        <Text style={styles.touchableText}>Get Your Address</Text>
                     </View>
             </TouchableOpacity>
         </View>

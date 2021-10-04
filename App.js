@@ -11,6 +11,7 @@ import ImageScreen from './src/screens/ImageScreen';
 import GestureResponderScreen from './src/screens/GestureResponderScreen';
 import GestureHandlerScreen from './src/screens/GestureHandlerScreen';
 
+import AddressScreen from './src/screens/AddressScreen';
 
 const Stack = createStackNavigator();
 
@@ -61,6 +62,10 @@ export default function App() {
         <Stack.Screen
         name="HomeToGestureHandler"
         component={GestureHandlerScreen}
+        />
+        <Stack.Screen
+        name="HomeToAddress"
+        component={AddressScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
